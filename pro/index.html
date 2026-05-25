@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Agulla Aishwarya Portfolio</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#020617;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      height:75px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 8%;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      background:rgba(2,6,23,0.85);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      color:#38bdf8;
+      letter-spacing:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#cbd5e1;
+      font-size:15px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#38bdf8;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:120px 20px 80px;
+
+      background:
+      radial-gradient(circle at top left,#0ea5e944,transparent 30%),
+      radial-gradient(circle at bottom right,#38bdf844,transparent 30%),
+      #020617;
+    }
+
+    .hero-content{
+      max-width:950px;
+    }
+
+    /* PROFILE IMAGE */
+
+    .profile-pic{
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #38bdf8;
+      margin-bottom:30px;
+      box-shadow:0 0 25px rgba(56,189,248,0.45);
+    }
+
+    /* TAG */
+
+    .tag{
+      display:inline-block;
+      padding:10px 24px;
+      border:1px solid #38bdf8;
+      border-radius:50px;
+      color:#38bdf8;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:25px;
+      background:rgba(56,189,248,0.08);
+      box-shadow:0 0 12px rgba(56,189,248,0.2);
+    }
+
+    /* NAME */
+
+    .hero h1{
+      font-size:68px;
+      margin-bottom:18px;
+      font-weight:700;
+    }
+
+    /* DESCRIPTION */
+
+    .hero p{
+      font-size:18px;
+      line-height:1.8;
+      color:#94a3b8;
+      max-width:700px;
+      margin:auto;
+      margin-bottom:40px;
+    }
+
+    /* BUTTONS */
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-bottom:40px;
+    }
+
+    .btn{
+      padding:14px 32px;
+      border-radius:12px;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .primary{
+      background:#38bdf8;
+      color:white;
+      box-shadow:0 0 18px rgba(56,189,248,0.4);
+    }
+
+    .primary:hover{
+      transform:translateY(-4px);
+    }
+
+    .secondary{
+      border:1px solid #334155;
+      color:white;
+      background:transparent;
+    }
+
+    .secondary:hover{
+      background:#0f172a;
+    }
+
+    /* SOCIALS */
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .social-box{
+      border:1px solid #1e3a5f;
+      padding:12px 22px;
+      border-radius:50px;
+      color:white;
+      text-decoration:none;
+      background:rgba(15,23,42,0.7);
+      transition:0.3s;
+      font-size:14px;
+    }
+
+    .social-box:hover{
+      border-color:#38bdf8;
+      transform:translateY(-3px);
+      box-shadow:0 0 10px rgba(56,189,248,0.25);
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:90px 10%;
+    }
+
+    .about{
+      background:#0f172a;
+    }
+
+    .skills{
+      background:#020617;
+    }
+
+    .projects{
+      background:#0f172a;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:38px;
+      color:#38bdf8;
+      margin-bottom:45px;
+      position:relative;
+    }
+
+    .section-title::after{
+      content:'';
+      width:80px;
+      height:3px;
+      background:#38bdf8;
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-10px;
+      border-radius:20px;
+    }
+
+    /* ABOUT */
+
+    .about-box{
+      max-width:900px;
+      margin:auto;
+      padding:40px;
+      border-radius:20px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid #1e3a5f;
+      box-shadow:0 0 20px rgba(56,189,248,0.08);
+    }
+
+    .about-box p{
+      font-size:17px;
+      line-height:1.9;
+      color:#cbd5e1;
+      text-align:center;
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:35px;
+    }
+
+    .skill-card{
+      padding:14px 28px;
+      border-radius:12px;
+      background:#0f172a;
+      border:1px solid #1e3a5f;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-4px);
+      border-color:#38bdf8;
+      box-shadow:0 0 12px rgba(56,189,248,0.2);
+    }
+
+    /* PROJECTS */
+
+    .project-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .project-card{
+      background:#020617;
+      padding:28px;
+      border-radius:18px;
+      border:1px solid #1e3a5f;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-6px);
+      border-color:#38bdf8;
+      box-shadow:0 0 15px rgba(56,189,248,0.15);
+    }
+
+    .project-card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+      font-size:22px;
+    }
+
+    .project-card p{
+      color:#cbd5e1;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#020617;
+      color:#94a3b8;
+      font-size:14px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .section-title{
+        font-size:32px;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .profile-pic{
+        width:150px;
+        height:150px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">AA</div>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <!-- PROFILE PHOTO -->
+      <!-- KEEP 1111.jpeg IN SAME FOLDER -->
+
+      <img src="1111.jpeg" alt="Profile Photo" class="profile-pic">
+
+      <div class="tag">
+        B.Tech CSE - Data Science Student
+      </div>
+
+      <h1>Agulla Aishwarya</h1>
+
+      <p>
+        Passionate about building intelligent software solutions
+        using Python, Machine Learning, NLP, and modern Web Technologies.
+      </p>
+
+      <!-- BUTTONS -->
+
+      <div class="buttons">
+
+        <a href="Agulla_Aishwarya_OnePage_Resume.pdf"
+           download
+           class="btn primary">
+           Download Resume
+        </a>
+
+        <a href="#projects" class="btn secondary">
+          View Projects
+        </a>
+
+      </div>
+
+      <!-- CONTACT LINKS -->
+
+      <div class="socials">
+
+        <a href="mailto:agullaaishwarya@gmail.com"
+           class="social-box">
+           📧 agullaaishwarya@gmail.com
+        </a>
+
+        <a href="https://github.com/2403a54128"
+           target="_blank"
+           class="social-box">
+           💻 GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/agulla-aishwarya-946240386?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+           target="_blank"
+           class="social-box">
+           🔗 LinkedIn
+        </a>
+
+        <a href="tel:7331158837"
+           class="social-box">
+           📞 7331158837
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-box">
+
+      <p>
+
+        I am a B.Tech Computer Science Engineering student specializing
+        in Data Science at SR University. I enjoy working with
+        Machine Learning, NLP, AI, and Full-Stack technologies to build
+        practical and intelligent solutions for real-world problems.
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section class="skills" id="skills">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill-card">Python</div>
+      <div class="skill-card">C Programming</div>
+      <div class="skill-card">Machine Learning</div>
+      <div class="skill-card">NLP</div>
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">SQL</div>
+      <div class="skill-card">Data Science</div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section class="projects" id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-container">
+
+      <div class="project-card">
+
+        <h3>Spam Message Detection</h3>
+
+        <p>
+          Developed a Machine Learning model that classifies
+          SMS and emails as spam or genuine using Python and NLP.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Fake News Detection</h3>
+
+        <p>
+          Built an NLP-based fake news detection system using
+          Machine Learning algorithms and Python libraries.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Crop Prediction System</h3>
+
+        <p>
+          Created a smart farming solution to predict crop yield
+          using Machine Learning techniques.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Portfolio Website</h3>
+
+        <p>
+          Designed and developed a modern responsive portfolio
+          website using HTML, CSS, and JavaScript.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Agulla Aishwarya | All Rights Reserved
+
+  </footer>
+
+</body>
+
+</html>
